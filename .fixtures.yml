@@ -1,0 +1,3 @@
+fixtures:
+  symlinks:
+    xdebug: "#{source_dir}"

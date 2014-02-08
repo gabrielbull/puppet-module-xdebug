@@ -1,0 +1,8 @@
+name    'gabrielbull-xdebug'
+version '1.0.0'
+source 'https://github.com/gabrielbull/puppet-module-xdebug'
+author 'gabrielbull'
+license 'MIT'
+summary 'Setup PHP xdebug'
+description 'Setup PHP xdebug'
+project_page 'https://github.com/gabrielbull/puppet-module-xdebug'
