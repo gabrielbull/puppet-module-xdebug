@@ -1,7 +1,15 @@
 class xdebug::params {
-  $ini_file_path = $operatingsystem ? {
-    /Centos|RedHat|Fedora/ => '/etc/php.d/xdebug.ini',
-    /Debian|Ubuntu/ => '/etc/php5/conf.d/xdebug_config.ini',
+  case $operatingsystem {
+    'RedHat', 'CentOS', 'Fedora': {
+      $ini_file_path = '/etc/php.d/xdebug.ini'
+      $package = 'php-pecl-xdebug'
+      $php = 'php-cli'
+    }
+    'Debian', 'Ubuntu': {
+      $ini_file_path = '/etc/php5/conf.d/xdebug_config.ini'
+      $package = 'php5-xdebug'
+      $php = 'php5-cli'
+    }
   }
 
   $default_enable      = '1'
@@ -13,14 +21,4 @@ class xdebug::params {
   $remote_connect_back = '0'
   $remote_log          = false
   $idekey              = ''
-
-  $package = $operatingsystem ? {
-      /Centos|RedHat|Fedora/ => 'php-pecl-xdebug',
-      /Debian|Ubuntu/ => 'php5-xdebug',
-  }
-
-  $php = $operatingsystem ? {
-      /Centos|RedHat|Fedora/ => 'php-cli',
-      /Debian|Ubuntu/ => 'php5-cli',
-  }
 }
