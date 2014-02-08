@@ -17,7 +17,7 @@ class xdebug (
     notify => File[$ini_file_path],
   }
 
-  file { "$xdebug_ini_file_path" :
+  file { "$ini_file_path" :
     content => template('xdebug/ini_file.erb'),
     ensure  => present,
     require => Package[$xdebug::params::package],
