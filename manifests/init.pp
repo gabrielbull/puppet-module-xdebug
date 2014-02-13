@@ -11,6 +11,8 @@ class xdebug (
   $remote_log           = $xdebug::params::remote_log,
   $idekey               = $xdebug::params::idekey,
 ) inherits xdebug::params {
+  $zend_extension_module = $xdebug::params::zend_extension_module
+
   package { "$xdebug::params::package":
     ensure => "installed",
     require => Package[$xdebug::params::php],

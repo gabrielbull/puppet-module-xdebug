@@ -4,11 +4,13 @@ class xdebug::params {
       $ini_file_path = '/etc/php.d/xdebug.ini'
       $package = 'php-pecl-xdebug'
       $php = 'php-cli'
+      $zend_extension_module = '/usr/lib64/php/modules/xdebug.so'
     }
     'Debian', 'Ubuntu': {
       $ini_file_path = '/etc/php5/conf.d/xdebug_config.ini'
       $package = 'php5-xdebug'
       $php = 'php5-cli'
+      $zend_extension_module = '/usr/lib64/php/modules/xdebug.so'
     }
   }
 
