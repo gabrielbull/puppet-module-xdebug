@@ -1,5 +1,8 @@
-;File Managed by Puppet
+; File Managed by Puppet
+; Enable xdebug extension module
 zend_extension=<%= @zend_extension_module %>
+
+; see http://xdebug.org/docs/all_settings
 xdebug.default_enable=<%= @default_enable %>
 xdebug.remote_enable=<%= @remote_enable %>
 xdebug.remote_handler=<%= @remote_handler %>

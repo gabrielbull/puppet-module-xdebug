@@ -1,10 +1,10 @@
 class xdebug::params {
   case $operatingsystem {
     'RedHat', 'CentOS', 'Fedora': {
-      $ini_file_path = '/etc/php.d/xdebug.ini'
+      $ini_file_path = '/etc/php.d/15-xdebug.ini'
       $package = 'php-pecl-xdebug'
       $php = 'php-cli'
-      $zend_extension_module = '/usr/lib64/php/modules/xdebug.so'
+      $zend_extension_module = 'xdebug.so'
     }
     'Debian', 'Ubuntu': {
       $ini_file_path = '/etc/php5/conf.d/xdebug_config.ini'
